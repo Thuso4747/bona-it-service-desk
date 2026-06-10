@@ -1,0 +1,55 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+//User table
+
+//enum Role will define the users' roles
+enum Role {
+  CLIENT
+  AGENT
+  ADMIN
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  userRef String @unique
+  name String
+  email String @unique
+  role Role
+  password String
+  submittedTickets Ticket[] @relation("SubmittedTickets")
+  resolvedTickets Ticket[] @relation("ResolvedTickets")
+}
+
+//Ticket table
+
+//enum TicketState to define what state the ticket is in
+enum TicketState{
+  CREATED
+  PROCESSING
+  COMPLETED
+}
+
+model Ticket{
+  id Int @id @default(autoincrement())
+  ticketRef String @unique
+  title String
+  description String
+  status TicketState
+  date DateTime @default(now())
+  submittedBy Int 
+  submittedUser User @relation("SubmittedTickets", fields: [submittedBy], references: [id])
+  resolvedBy Int?
+  resolvingUser User? @relation("ResolvedTickets", fields: [resolvedBy], references: [id])
+}
