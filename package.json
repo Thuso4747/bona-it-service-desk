@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "name": "bona-it-helpdesk",
+=======
   "name": "bona-it-service-desk",
+>>>>>>> a0bce196a0be721e4f8f68b20109abf142adb555
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,9 +13,15 @@
     "lint": "eslint"
   },
   "dependencies": {
+<<<<<<< HEAD
+    "next": "^16.2.9",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+=======
     "next": "16.2.7",
     "react": "19.2.4",
     "react-dom": "19.2.4"
+>>>>>>> a0bce196a0be721e4f8f68b20109abf142adb555
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -19,8 +29,12 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
+<<<<<<< HEAD
+    "eslint-config-next": "16.2.9",
+=======
     "eslint-config-next": "16.2.7",
     "prisma": "^7.8.0",
+>>>>>>> a0bce196a0be721e4f8f68b20109abf142adb555
     "tailwindcss": "^4",
     "typescript": "^5"
   }
