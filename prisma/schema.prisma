@@ -1,7 +1,4 @@
 // This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
 
 generator client {
   provider = "prisma-client"
@@ -29,6 +26,7 @@ model User {
   role Role
   password String
   submittedTickets Ticket[] @relation("SubmittedTickets")
+  assignedTickets Ticket[] @relation("AssignedTickets")
   resolvedTickets Ticket[] @relation("ResolvedTickets")
 }
 
@@ -41,15 +39,30 @@ enum TicketState{
   COMPLETED
 }
 
+//enum ReportType to determine what type of ticket was submitted
+enum ReportType{
+  SUGGESTION
+  COMPLAINT
+  FEEDBACK
+  OTHER
+}
+
 model Ticket{
   id Int @id @default(autoincrement())
   ticketRef String @unique
+  trackingToken String @unique
   title String
+  reportType ReportType
   description String
-  status TicketState
-  date DateTime @default(now())
+  status TicketState @default(CREATED)
+  creationDate DateTime @default(now())
+  updatedDate DateTime @updatedAt
+  slaDeadline DateTime?
   submittedBy Int 
   submittedUser User @relation("SubmittedTickets", fields: [submittedBy], references: [id])
+  assignedTo Int?
+  assignedAgent User? @relation("AssignedTickets", fields: [assignedTo], references: [id])
   resolvedBy Int?
   resolvingUser User? @relation("ResolvedTickets", fields: [resolvedBy], references: [id])
+ 
 }
