@@ -11,6 +11,14 @@ A service desk portal featuring a client dahboard, user authentications, and an 
 
 ---
 
+## Demo Video
+
+The project demo video is available on Google Drive:
+
+- **Demo Video:** https://drive.google.com/drive/folders/1ZNjpOvzv9FUDjnMlTkQ3P-AgOnQilM8n?usp=sharing
+
+---
+
 ##  Admin / Agent Credentials
 
 The system is pre-seeded with a default super admin agent account. Use the credentials below to log in:
