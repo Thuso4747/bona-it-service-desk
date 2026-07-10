@@ -1,41 +1,68 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Service Desk App - Documentation
 
-## Getting Started
+A comprehensive service desk portal featuring a client simulator, user authentications, and a robust admin/agent management dashboard. 
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🔑 Admin / Agent Credentials
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The system is pre-seeded with a default super admin agent account. Use the credentials below to log in:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Email Address:** `admin@portal.com`
+- **Password:** `admin123`
+- **Role:** Agent / Administrator
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 👤 Client Features & Instructions
 
-To learn more about Next.js, take a look at the following resources:
+The portal allows users to submit support tickets and track them in real-time.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Self-Service Support Request**:
+   - Access the portal and select or register a client account.
+   - Click on the **New Support Ticket** form.
+   - Enter the request title, choose a report category, and provide detailed description.
+   - Click submit to generate a unique tracking reference.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Real-time Tracker**:
+   - View submitted tickets and their current status (`CREATED`, `IN_PROGRESS`, `RESOLVED`, etc.).
+   - Review historical notes or responses added by assigned support agents.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Admin & Support Agent Features & Instructions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
+The Agent Dashboard provides service management capabilities to organize, assign, and resolve user requests.
+
+1. **Unified Dashboard**:
+   - Toggle between **Tickets Table** and **Users Table** to view structural records.
+   - Use the smart search bar to filter tickets or users by keywords, categories, or references.
+
+2. **User Password Visibility (Read-Only)**:
+   - For auditing and management purposes, administrators can view the exact user passwords directly in the **Users Table** and the **User Inspector** tab.
+   - To prevent accidental modifications, password inputs are greyed out, marked read-only, and disabled for editing.
+
+3. **Inline Record Inspection**:
+   - Click on any row to open the inspector pane.
+   - Review structural fields, associated account metadata, and chronological histories.
+
+4. **Status & Role Updates**:
+   - Manage ticket assignments and update priority status.
+   - Modify user classifications and system access (e.g., updating client/agent roles) directly from the admin view.
+   - Save modifications seamlessly with the unified action controls.
+
+---
+
+## 🔍 Ticket Tracking API & Reference Normalization
+
+The portal supports a dedicated serverless and container-compatible endpoint for tracking support tickets by token or code.
+
+- **Status Tracking Endpoint**: `GET /api/tickets/status/:token`
+- **Normalization Support**:
+  - Automatically strips spaces and capitalizes references.
+  - Detects 8-character hexadecimal codes and automatically prepends `TKT-` (e.g., `a1b2c3d4` normalizes to `TKT-A1B2C3D4`) for robust query matches.
+  - Queries either the dynamic `trackingToken` or normalized `ticketRef` linked to user account metadata.
+
 ## Database Schema Doc ##
 
 ## Overview
