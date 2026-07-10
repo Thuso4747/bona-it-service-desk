@@ -4,6 +4,13 @@ A comprehensive service desk portal featuring a client simulator, user authentic
 
 ---
 
+## 🚀 Live Deployment
+
+- **Deployed URL:** https://bona-it-service-desk-system.vercel.app/
+- **Agent Login:** admin@portal.com / admin123
+
+---
+
 ## 🔑 Admin / Agent Credentials
 
 The system is pre-seeded with a default super admin agent account. Use the credentials below to log in:
@@ -88,4 +95,4 @@ ResolvedBy is also a foreign key that links with the User table and will take th
 # Relationships
 SubmittedBy writes to submittedTickets in the Tickets array, linked to the User table using the user ID.
 ResolvedBy writes to resolvedTickets in the Tickets array, linked to the User table using the user ID.
->>>>>>> a0bce196a0be721e4f8f68b20109abf142adb555
+
