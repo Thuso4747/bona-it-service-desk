@@ -4,14 +4,14 @@ A comprehensive service desk portal featuring a client simulator, user authentic
 
 ---
 
-## 🚀 Live Deployment
+##  Live Deployment
 
 - **Deployed URL:** https://bona-it-service-desk-system.vercel.app/
 - **Agent Login:** admin@portal.com / admin123
 
 ---
 
-## 🔑 Admin / Agent Credentials
+##  Admin / Agent Credentials
 
 The system is pre-seeded with a default super admin agent account. Use the credentials below to log in:
 
@@ -21,7 +21,7 @@ The system is pre-seeded with a default super admin agent account. Use the crede
 
 ---
 
-## 👤 Client Features & Instructions
+##  Client Features & Instructions
 
 The portal allows users to submit support tickets and track them in real-time.
 
@@ -37,7 +37,7 @@ The portal allows users to submit support tickets and track them in real-time.
 
 ---
 
-## 🛠️ Admin & Support Agent Features & Instructions
+##  Admin & Support Agent Features & Instructions
 
 The Agent Dashboard provides service management capabilities to organize, assign, and resolve user requests.
 
@@ -60,7 +60,7 @@ The Agent Dashboard provides service management capabilities to organize, assign
 
 ---
 
-## 🔍 Ticket Tracking API & Reference Normalization
+##  Ticket Tracking API & Reference Normalization
 
 The portal supports a dedicated serverless and container-compatible endpoint for tracking support tickets by token or code.
 
