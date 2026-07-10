@@ -1,0 +1,6 @@
+{
+  "name": "Sign In and Sign Up Portal",
+  "description": "An extremely elegant and precise sign in and sign up page design with high-fidelity toggle transitions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

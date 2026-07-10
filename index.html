@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Desk App</title>
+    <script>
+      // Catch and completely suppress benign HMR WebSocket/network errors
+      window.addEventListener('unhandledrejection', function(event) {
+        var msg = event.reason && event.reason.message ? event.reason.message : '';
+        if (msg.includes('WebSocket') || msg.includes('websocket') || msg.includes('closed without opened')) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      }, true);
+
+      window.addEventListener('error', function(event) {
+        var msg = event.message || '';
+        if (msg.includes('WebSocket') || msg.includes('websocket') || msg.includes('closed without opened')) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      }, true);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
